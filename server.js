@@ -1,8 +1,7 @@
 const express = require( 'express' );
-const loggerMiddleWare = require( './logger' );
 const app = express();
 
-app.use( loggerMiddleWare );
+app.use( express.static( 'public' ) );
 
 app.get( '/', ( req, res ) => {
 	res.sendFile( __dirname + '/public/index.html' );

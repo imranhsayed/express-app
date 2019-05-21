@@ -10,7 +10,12 @@
 
 ## Branch Information :computer:
 
-### 1. [custom-middleware](https://github.com/imranhsayed/express-app/tree/custom-middleware) 
+### 1. [static-middleware](https://github.com/imranhsayed/express-app/tree/static-middleware)
+
+> The `express.static()` middleware that comes shipped with express, automatically servers the `index.html` on root url `'/'` without having to 
+create a route using `app.get( '/' )` 
+
+### 2. [custom-middleware](https://github.com/imranhsayed/express-app/tree/custom-middleware) 
 > * Creates a custom middleware called loggerMiddleWare.
 > *	Run `npm run dev`
 > * Open browser at `http://localhost:5000`

@@ -15,7 +15,7 @@
 > The `express.static()` middleware that comes shipped with express, automatically servers the `index.html` on root url `'/'` without having to 
 create a route using `app.get( '/' )` 
 
-``` ruby
+```ruby
 app.use( express.static( 'public' ) )
 ```
 

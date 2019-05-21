@@ -3,6 +3,11 @@
 ## Description :clipboard:
 > A demo app for express
 
+## Installation :wrench:
+
+1. Clone this repo in `git clone https://github.com/imranhsayed/express-app`
+2. `git checkout branch-name`
+
 ## Branch Information :computer:
 
 ### 1. [custom-middleware](https://github.com/imranhsayed/express-app/tree/custom-middleware) 

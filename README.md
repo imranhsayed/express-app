@@ -37,11 +37,10 @@
 
  * When we have multiple routes ( like get, post, delete ) for the same route url `/posts` , we can chain them together using `app.route()` like so:
  
- ```ruby
+```ruby
  app.route( '/posts' )
     .get( ( req, res ) => ... )
     .post( ( req, res ) => ... )
- 
  ```
  
  * The `app.route( $path )` takes the route path and returns a route object that handles all request to the given `$path`
@@ -121,7 +120,7 @@ it calculates the time it took for that request to complete and prints that.
 > * Request to `/post/software` will return 'I like Express'
 > * Request to name that's not available in post object, like `/posts/xyz` will return 'No description found for xyz'
 
-``` ruby
+```ruby
 const posts = {
 	'movies': 'I love movie blogs',
 	'games': 'The best game of the year is God of War 4',

@@ -41,7 +41,7 @@ it calculates the time it took for that request to complete and prints that.
 
 ![](loggerMiddleWare.gif)
 
-### 2. [query-params](https://github.com/imranhsayed/express-app/tree/query-params)
+### 3. [query-params](https://github.com/imranhsayed/express-app/tree/query-params)
 
 > * An example to create a route and get the post data at `/posts`
 > * If the user adds a query string `?limit=2` in the route, then it should return those many post items

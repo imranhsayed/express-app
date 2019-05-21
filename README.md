@@ -17,6 +17,7 @@ create a route using `app.get( '/' )`
 
 ```ruby
 app.use( express.static( 'public' ) )
+
 ```
 
 ### 2. [custom-middleware](https://github.com/imranhsayed/express-app/tree/custom-middleware) 

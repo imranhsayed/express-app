@@ -57,16 +57,14 @@ it calculates the time it took for that request to complete and prints that.
 > * Request to `/post/software` will return 'I like Express'
 > * Request to name that's not available in post object, like `/posts/xyz` will return 'No description found for xyz'
 
-```ruby
+``` ruby
 const posts = {
 	'movies': 'I love movie blogs',
 	'games': 'The best game of the year is God of War 4',
 	'software': 'I like Express'
 };
 
-/**
- * Dynamic route
- */
+// Dynamic Route
 app.get( '/posts/:name', ( req, res ) => {
 
 	const description = posts[ req.params.name ];

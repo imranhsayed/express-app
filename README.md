@@ -15,6 +15,10 @@
 > The `express.static()` middleware that comes shipped with express, automatically servers the `index.html` on root url `'/'` without having to 
 create a route using `app.get( '/' )` 
 
+```angular2
+app.use( express.static( 'public' ) )
+```
+
 ### 2. [custom-middleware](https://github.com/imranhsayed/express-app/tree/custom-middleware) 
 > * Creates a custom middleware called loggerMiddleWare.
 > *	Run `npm run dev`

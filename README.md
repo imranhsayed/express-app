@@ -3,6 +3,11 @@
 ## Description :clipboard:
 > A demo app for express
 
+## Installation
+
+1. Clone this repo in `git clone https://github.com/imranhsayed/express-app`
+2. `git checkout branch-name`
+
 ## Branch Information :computer:
 
 ### 1. [custom-middleware](https://github.com/imranhsayed/express-app/tree/custom-middleware) 
@@ -13,6 +18,6 @@
 and the middleware intercepts that request and when the response for that request is finished
 it calculates the time it took for that request to complete and prints that.  
   
-  ### LoggerMiddleWare Demo :video_camera:
-  
-  ![](loggerMiddleWare.gif)
+### LoggerMiddleWare Demo :video_camera:
+
+![](loggerMiddleWare.gif)

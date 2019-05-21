@@ -10,7 +10,7 @@
 
 # FAQs
 
-## What are Middlewares ? :vertical_traffic_light:
+## 1. What are Middlewares ? :vertical_traffic_light:
 
 > * Middlewares are functions added to the stack, that have access to the request and response object.
 > * They are executed sequentially. We can do things like validation, authentication, data-parsing etc inside of each middleware.
@@ -18,7 +18,7 @@
 > * An express application is a stack of middleware running one after the other.
 > * The `next()` must be called at the end of every middleware ( function ), to move the processing to the next middleware in the stack.
 
-## Why do we use body-parser middleware?
+## 2. Why do we use body-parser middleware?
 > * The `body-parser` middleware parses the form data, so that we can read it.
 > * Calling this function and setting extended to false, `bodyParser.urlencoded( {extended: false} )`
  forces the use of node's native queryString module, which parses the data . It returns a middleware function that parses data.
@@ -28,12 +28,12 @@
  app.use( bodyParser.urlencoded( {extended: false} ) );
  ```
  
-## When is response.sendStatus() used?
+## 3. When is response.sendStatus() used?
  
  * `response.sendStatus( 200 )` is used in our express routes, when we don't want to send a body along with the response.
   It sets the response body to 'OK' by default. 
   
-## How do we handle Multiple Route Instances?
+## 4. How do we handle Multiple Route Instances?
 
  * When we have multiple routes ( like get, post, delete ) for the same route url `/posts` , we can chain them together using `app.route()` like so:
  
@@ -47,7 +47,38 @@
  * The `app.route( $path )` takes the route path and returns a route object that handles all request to the given `$path`
  * Chaining means calling the next function on the return value of the previous function.
  * The lines starting with dot indicate the function calls on the object returned from the previous call.
-
+ 
+ ## 6. How will you extract routes to modules?
+ 
+ * So that our main file does not become too long when we have many routes, we can extract routes by breaking them into modules.
+ * Create a dedicated folder for all your routes and create a separate file for each time of routes. E.g. dir name routes and filename
+ will be posts.js inside of it, where we define all routes related to post
+ * Now in your routes/posts.js file, create an instance of a router using `const router = express.Router();` and export router at the bottom
+ * Then we can define all our routes using the router instance like `router.get()`, or chain them using `router.route()`
+ * The path `/` is relative to where this router will be mounted in your main entry point file `server.js`
+ 
+ ```ruby
+ const express = require( 'express' );
+ const router = express.Router();
+ 
+ router.route( '/' )
+    .all( (req, res) => ... )
+    .get( (req, res) => ... )
+    .post( (req, res) => ... );
+    
+ router.get( '/:id', ( req, res ) => ... );    
+ 
+ module.exports = router;
+ ```
+ 
+ * Notice that `router.all()` is used for all types of routes ( get, post, delete etc ) to that url.
+ * Finally we require this file `routes/post.js` into our main entry point file `server.js`
+ 
+```ruby
+const posts = require( '/routes/posts' );
+app.use( '/posts', posts );
+```
+ 
 
 ## Branch Information :computer:
 

@@ -16,6 +16,16 @@
 > * An express application is a stack of middleware running one after the other.
 > * The `next()` must be called at the end of every middleware ( function ), to move the processing to the next middleware in the stack.
 
+## Why do we use body-parser middleware?
+> * The `body-parser` middleware parses the form data, so that we can read it.
+> * Calling this function and setting extended to false, `bodyParser.urlencoded( {extended: false} )`
+ forces the use of node's native queryString module, which parses the data . It returns a middleware function that parses data.
+ 
+ ```ruby
+ const bodyParser = require( 'body-parser');
+ app.use( bodyParser.urlencoded( {extended: false} ) );
+ ```
+
 ## Branch Information :computer:
 
 ### 1. [static-middleware](https://github.com/imranhsayed/express-app/tree/static-middleware)

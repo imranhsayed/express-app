@@ -7,7 +7,7 @@
  * @param res
  * @param next
  */
-const loggerMiddleWare = ( req, res, next ) => {
+module.exports = ( req, res, next ) => {
 
 	// Plus sign converts date object to unix timestamp
 	const start = +new Date();
@@ -36,4 +36,4 @@ const loggerMiddleWare = ( req, res, next ) => {
 	next();
 };
 
-module.exports = loggerMiddleWare;
+// module.exports = loggerMiddleWare();

@@ -25,6 +25,11 @@
  const bodyParser = require( 'body-parser');
  app.use( bodyParser.urlencoded( {extended: false} ) );
  ```
+ 
+ ## When is response.sendStatus() used?
+ 
+ * `response.sendStatus( 200 )` is used in our express routes, when we don't want to send a body along with the response.
+  It sets the response body to 'OK' by default. 
 
 ## Branch Information :computer:
 

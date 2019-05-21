@@ -8,6 +8,8 @@
 1. Clone this repo in `git clone https://github.com/imranhsayed/express-app`
 2. `git checkout branch-name`
 
+# FAQs
+
 ## What are Middlewares ? :vertical_traffic_light:
 
 > * Middlewares are functions added to the stack, that have access to the request and response object.
@@ -26,10 +28,26 @@
  app.use( bodyParser.urlencoded( {extended: false} ) );
  ```
  
- ## When is response.sendStatus() used?
+## When is response.sendStatus() used?
  
  * `response.sendStatus( 200 )` is used in our express routes, when we don't want to send a body along with the response.
   It sets the response body to 'OK' by default. 
+  
+## How do we handle Multiple Route Instances?
+
+ * When we have multiple routes ( like get, post, delete ) for the same route url `/posts` , we can chain them together using `app.route()` like so:
+ 
+ ```ruby
+ app.route( '/posts' )
+    .get( ( req, res ) => ... )
+    .post( ( req, res ) => ... )
+ 
+ ```
+ 
+ * The `app.route( $path )` takes the route path and returns a route object that handles all request to the given `$path`
+ * Chaining means calling the next function on the return value of the previous function.
+ * The lines starting with dot indicate the function calls on the object returned from the previous call.
+
 
 ## Branch Information :computer:
 

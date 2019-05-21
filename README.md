@@ -50,6 +50,17 @@ it calculates the time it took for that request to complete and prints that.
 
 ![](query-string.gif)
 
+### 4. [dynamic-routes](https://github.com/imranhsayed/express-app/tree/dynamic-routes)
+
+> * An example to create a dynamic route at `/posts/:name`
+> * Request to `/post/movies` will return 'I love movie blogs'
+> * Request to `/post/software` will return 'I like Express'
+> * Request to name that's not available in post object, like `/posts/xyz` will return 'No description found for xyz'
+
+### Dynamic Routes Demo :video_camera:
+
+![](dynamic-routes.gif)
+
 
 ## Common Commands :computer:
 

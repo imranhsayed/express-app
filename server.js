@@ -7,19 +7,28 @@ app.get( '/', ( req, res ) => {
 	res.sendFile( __dirname + '/public/index.html' );
 } );
 
-/**
- * GET '/posts?limit=2'
- *
- */
-app.get( '/posts', ( req, res ) => {
-	const posts = [ 'God of War', 'RE5', 'Clock Tower'  ];
-	const queryLimit = req.query.limit;
+const posts = {
+	'movies': 'I love movie blogs',
+	'games': 'The best game of the year is God of War 4',
+	'software': 'I like Express'
+};
 
-	// If user passes a limit ( '/posts?limit=1` ) greater than zero, then only return those many items in the post.
-	if ( queryLimit >= 0 ) {
-		res.json( posts.slice( 0, queryLimit ) );
+/**
+ * Dynamic route
+ *
+ * Request to '/post/movies' will return 'I love movie blogs'
+ * Request to '/post/software' will return 'I like Express'
+ * Request to name that's not available in post object, like '/posts/xyz' will return 'No description found for xyz'
+ */
+app.get( '/posts/:name', ( req, res ) => {
+
+	const description = posts[ req.params.name ];
+
+	// If the value of 'name' passed in the route does not exist as posts property
+	if ( ! description ) {
+		res.status( 404 ).json( `No description found for ${req.params.name}` );
 	} else {
-		res.json( posts );
+		res.json( description );
 	}
 } );
 

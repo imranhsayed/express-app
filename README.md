@@ -8,7 +8,7 @@
 1. Clone this repo in `git clone https://github.com/imranhsayed/express-app`
 2. `git checkout branch-name`
 
-## What are Middlewares ?
+## What are Middlewares ? :vertical_traffic_light:
 
 > * Middlewares are functions added to the stack, that have access to the request and response object.
 > * They are executed sequentially. We can do things like validation, authentication, data-parsing etc inside of each middleware.

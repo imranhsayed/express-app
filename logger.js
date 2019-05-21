@@ -1,3 +1,5 @@
+const fs = require( 'fs' );
+
 /**
  * Create a middleware
  * Logs the duration of the request when the request is finished,
@@ -28,6 +30,11 @@ module.exports = ( req, res, next ) => {
 
 		// Print the log message.
 		stream.write( message );
+
+		// Also Add log to the file
+		fs.appendFile( 'log.txt', message, ( err ) => {
+			if ( err ) throw err;
+		} )
 	} );
 
 

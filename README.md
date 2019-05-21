@@ -18,6 +18,7 @@
 and the middleware intercepts that request and when the response for that request is finished
 it calculates the time it took for that request to complete and prints that.  
   
+> * Also adds the message to a `log.txt` file  
 ### LoggerMiddleWare Demo :video_camera:
 
 ![](loggerMiddleWare.gif)

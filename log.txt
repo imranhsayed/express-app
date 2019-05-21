@@ -1,0 +1,12 @@
+GET to / 
+ took 10 ms 
+
+GET to /favicon.ico 
+ took 2 ms 
+
+GET to / 
+ took 1 ms 
+
+GET to /call 
+ took 1 ms 
+

@@ -25,7 +25,9 @@ app.use( express.static( 'public' ) )
 > * Open browser at `http://localhost:5000`
 > * Every time you refresh the page, a GET request to `http://localhost:5000/` is made 
 and the middleware intercepts that request and when the response for that request is finished
-it calculates the time it took for that request to complete and prints that.  
+it calculates the time it took for that request to complete and prints that.
+
+> * Also adds the message to a `log.txt` file  
   
 ### LoggerMiddleWare Demo :video_camera:
 

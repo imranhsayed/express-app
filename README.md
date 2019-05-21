@@ -8,6 +8,14 @@
 1. Clone this repo in `git clone https://github.com/imranhsayed/express-app`
 2. `git checkout branch-name`
 
+## What are Middlewares ?
+
+> * Middlewares are functions added to the stack, that have access to the request and response object.
+> * They are executed sequentially. We can do things like validation, authentication, data-parsing etc inside of each middleware.
+> * When the request comes in it passes through each of the middleware, before reaching the actual route. 
+> * An express application is a stack of middleware running one after the other.
+> * The `next()` must be called at the end of every middleware ( function ), to move the processing to the next middleware in the stack.
+
 ## Branch Information :computer:
 
 ### 1. [static-middleware](https://github.com/imranhsayed/express-app/tree/static-middleware)

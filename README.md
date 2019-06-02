@@ -78,10 +78,7 @@ const posts = require( '/routes/posts' );
 app.use( '/posts', posts );
 ```
 
-## 7. Using router to organize your code
-
-We should keep our `server.js` clean. So we can create a directory called routes and then api
-inside of it and keep all our routes inside them. And then just do `app.use()` in server.js like so :
+* Another Example:
 
 ```ruby
 	// server.js

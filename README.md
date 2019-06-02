@@ -77,6 +77,34 @@
 const posts = require( '/routes/posts' );
 app.use( '/posts', posts );
 ```
+
+## 7. Using router to organize your code
+
+We should keep our `server.js` clean. So we can create a directory called routes and then api
+inside of it and keep all our routes inside them. And then just do `app.use()` in server.js like so :
+
+```ruby
+	// server.js
+	const express = require( 'express' );
+	const app = express();
+	const port = 3000;
+	
+	const products = require( './routes/api/products' );
+	
+	app.use( '/api/products', products );
+	
+	app.listen( port => console.warn( `Ready on http://localhost:${port}` );
+	
+	
+	
+	// routes/api/products.js
+	const express = require( 'express' );
+	const router = express.Router();
+	
+	router.get( '/getProducts', ( req, res ) => ... );
+	
+	module.exports = router;
+``` 
  
 
 ## Branch Information :computer:

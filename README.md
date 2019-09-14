@@ -1,7 +1,7 @@
 # Express App
 
 ## Description :clipboard:
-> A demo app for express.
+> A demo app for express
 
 ## Installation :wrench:
 
